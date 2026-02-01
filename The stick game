@@ -1,0 +1,69 @@
+import random
+total=20
+print("Rules to Play")
+print("1.The player who wins the toss goes first")
+print("2.If invalid amoutnof sticks are tried to be removes that player loses their turn")
+print("3.Player whohas to take the last stick lose the game")
+ch=input("do you want to play(y/n)").lower()
+while ch=="y":
+    temp=total
+    print("total remaining stick:",temp)
+    toss=random.choice([0,1])
+    t=int(input("P1 enter your toss(0/1):"))
+    if (toss==t):
+        print("P1 win the toss")
+        print("YOUR TURN:")
+        while(temp>1):
+            p1=int(input("enter how many stick P1 want to remove(1/2/3):"))
+            if p1==1 or p1==2 or p1==3:
+                if (temp-p1>1):
+                    temp=temp-p1
+                elif (temp-p1==1):
+                    print("P1 WIN")
+                    break
+                else:
+                    print("enter vlaid no of sticks")
+            else:  
+                print("please enter valid amount of sticks:")
+            print("remaining stick:",temp)
+            p2=int(input("enter how many stick P2 want to remove(1/2/3):"))
+            if p2==1 or p2==2 or p2==3:
+                if (temp-p2>1):
+                    temp=temp-p2
+                elif (temp-p2==1):
+                    print("P2 WIN")
+                    break
+                else:
+                    print("enter vlaid no of sticks")    
+            else:  
+                print("please enter valid amount of sticks:")
+            print("remaining stick:",temp)
+    else:
+        print("P2 win the toss")
+        print("YOUR TURN:")
+        while(temp>1):
+            p2=int(input("enter how many stick P2 want to remove(1/2/3):"))
+            if p2==1 or p2==2 or p2==3:
+                if (temp-p2>1):
+                    temp=temp-p2
+                elif (temp-p2==1):
+                    print("P2 WIN")
+                    break
+                else:
+                    print("enter vlaid no of sticks")    
+            else:  
+                print("please enter valid amount of sticks:")
+            print("remaining stick:",temp)
+            p1=int(input("enter how many stick P1 want to remove(1/2/3):"))
+            if p1==1 or p1==2 or p1==3:
+                if (temp-p1>1):
+                    temp=temp-p1
+                elif (temp-p1==1):
+                    print("P1 WIN")
+                    break
+                else:
+                    print("enter vlaid no of sticks")
+            else:  
+                print("please enter valid amount of sticks:")
+            print("remaining stick:",temp)
+    ch=input("do you want to continue(y/n):").lower()  
