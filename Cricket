@@ -1,0 +1,85 @@
+import random
+print("RULES")
+print("1.the runs vary from 1-6")
+print("2.if the batter and the baller chose the same number then the batter is out")
+print("3.The player with most runs wins")
+print("the winner of the toss gets to bat first")
+play=input("do you want to play(y/n):").lower()
+while(play=='y'):
+    c_run=0
+    p_run=0
+    toss=random.choice([0,1])
+    p_toss=int(input("Enter your toss(0/1):"))
+    if (p_toss==toss):
+        print("THE PLAYER BATS FIRST!!!")
+        cur=1
+        while(cur==1):
+            comp=random.choice([1,2,3,4,5,6])
+            p=int(input("enter your wanted runs:"))
+            print("COMPUTER CHOSE:",comp)
+            print("PLAYER CHOSE:",p)
+            if(comp!=p):
+                p_run+=p
+                print("current player runs:",p_run)
+            else:
+                print("THE PLAYER GOT OUT!!")
+                print("THE PLAYER SCORED:",p_run)
+                cur=0
+        print("NOW THE COMPUTER BATS!!")
+        while(cur==0 and c_run<p_run):
+            comp=random.choice([1,2,3,4,5,6])
+            p=int(input("enter your run to get the computer out:"))
+            print("COMPUTER CHOSE:",comp)
+            print("PLAYER CHOSE:",p)
+            if(comp!=p):
+                c_run+=comp
+                print("current computer runs runs:",c_run)
+            else:
+                print("THE COMPUTER GOT OUT!!")
+                print("THE COMPUTER SCORED:",c_run)
+                cur=2
+        print("THE PLAYER SCORED:",p_run)
+        print("THE COMPUTER SCORED:",c_run)
+        if(p_run>c_run):
+            print("THE PLAYER WIN")
+        elif(c_run>p_run):
+            print("THE COMPUTER WIN")
+        else:
+            print("DRAW")
+    else:
+        print("THE COMPUTER BATS FIRST!!!")
+        curr=True
+        while(curr==True):
+            comp=random.choice([1,2,3,4,5,6])
+            p=int(input("enter your run to get the computer out:"))
+            print("COMPUTER CHOSE:",comp)
+            print("PLAYER CHOSE:",p)
+            if(comp!=p):
+                c_run+=comp
+                print("current computer runs runs:",c_run)
+            else:
+                print("THE COMPUTER GOT OUT!!")
+                print("THE COMPUTER SCORED:",c_run)
+                curr=False    
+        print("NOW THE PLAYER BATS!!")
+        while(curr==False and p_run<c_run):
+            comp=random.choice([1,2,3,4,5,6])
+            p=int(input("enter your wanted runs:"))
+            print("COMPUTER CHOSE:",comp)
+            print("PLAYER CHOSE:",p)
+            if(comp!=p):
+                p_run+=p
+                print("current player runs:",p_run)
+            else:
+                print("THE PLAYER GOT OUT!!")
+                print("THE PLAYER SCORED:",p_run)
+                curr=True
+        print("THE PLAYER SCORED:",p_run)
+        print("THE COMPUTER SCORED:",c_run)
+        if(p_run>c_run):
+            print("THE PLAYER WIN")
+        elif(c_run>p_run):
+            print("THE COMPUTER WIN")
+        else:
+            print("DRAW")
+    play=input("Do you want to continue(y/n):").lower()
