@@ -165,6 +165,8 @@ while(choice=='y'):
         print("Player 2 scored:",p2_points)
         if(p1_points>p2_points):
             print("PLAYER 1 IS THE OVERALL WINNER")
-        else:
+        elif(p1_points<p2_points):
             print("PLAYER 2 IS THE OVER ALL WINNER")
+        else:
+            print("DRAW")
         choice=input("DO YOU WANT TO CONTINUE(y/n):").lower()
